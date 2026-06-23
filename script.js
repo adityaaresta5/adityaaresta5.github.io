@@ -39,3 +39,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 100);
 });
+
+// Theme Toggle Logic
+const themeToggleBtn = document.getElementById('theme-toggle');
+const htmlEl = document.documentElement;
+const themeIcon = themeToggleBtn.querySelector('.icon');
+
+// Check local storage for theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    htmlEl.setAttribute('data-theme', savedTheme);
+    themeIcon.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+}
+
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = htmlEl.getAttribute('data-theme');
+    let newTheme = 'light';
+    let newIcon = '🌙';
+
+    if (currentTheme === 'light') {
+        newTheme = 'dark';
+        newIcon = '☀️';
+        htmlEl.removeAttribute('data-theme'); // default is dark
+    } else {
+        htmlEl.setAttribute('data-theme', newTheme);
+    }
+    
+    themeIcon.textContent = newIcon;
+    localStorage.setItem('theme', newTheme);
+});
