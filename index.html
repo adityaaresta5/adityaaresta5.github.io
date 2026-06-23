@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aditya - System Administrator Portfolio</title>
-    <meta name="description" content="Portfolio of Aditya, an Accomplished System Administrator with extensive expertise in Linux infrastructure, Zimbra mail services, and network architecture.">
+    <meta name="description"
+        content="Portfolio of Aditya, an Accomplished System Administrator with extensive expertise in Linux infrastructure, Zimbra mail services, and network architecture.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Background Decoration -->
     <div class="bg-shape bg-shape-1"></div>
     <div class="bg-shape bg-shape-2"></div>
-    
-    <!-- Floating Animated Objects -->
-    <div class="floating-obj obj-1"></div>
-    <div class="floating-obj obj-2"></div>
-    <div class="floating-obj obj-3"></div>
+
+    <!-- Particle Network Canvas -->
+    <canvas id="particles-canvas"></canvas>
 
     <nav>
         <div class="nav-content">
@@ -42,16 +45,78 @@
         <!-- Hero / Profile Section -->
         <section id="profile" class="hero">
             <div class="container hero-content hidden">
-                <p class="greeting">Hello, I'm</p>
-                <h1 class="name">Aditya</h1>
-                <h2 class="role">System Administrator</h2>
-                <p class="summary">
-                    Accomplished System Administrator with extensive expertise in Linux infrastructure, Zimbra mail services, and network architecture. Proven track record in streamlining server operations, enhancing system reliability, and executing seamless migrations. Dedicated to optimising technical performance through proactive R&D, advanced troubleshooting, and robust project management.
-                </p>
-                <div class="contact-info">
-                    <a href="mailto:arestaaditya5@gmail.com" class="btn btn-primary">arestaaditya5@gmail.com</a>
-                    <span class="location">📍 Koja, Jakarta Utara, DKI Jakarta, Indonesia</span>
-                    <span class="phone">📞 +62859-1065-59376</span>
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1 class="name">Aditya</h1>
+                    <h2 class="role">System Administrator</h2>
+                    <p class="summary">
+                        Accomplished System Administrator with extensive expertise in Linux infrastructure, Zimbra mail
+                        services, and network architecture. Proven track record in streamlining server operations,
+                        enhancing system reliability, and executing seamless migrations. Dedicated to optimising
+                        technical performance through proactive R&D, advanced troubleshooting, and robust project
+                        management.
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:arestaaditya5@gmail.com" class="btn btn-primary">arestaaditya5@gmail.com</a>
+                        <span class="location">📍 Koja, Jakarta Utara, DKI Jakarta, Indonesia</span>
+                        <span class="phone">📞 +62 859-1065-59376</span>
+                        <a href="https://www.linkedin.com/in/aditya-090a36136" target="_blank" class="linkedin-link" style="color: var(--accent); text-decoration: none; display: flex; align-items: center; gap: 8px; font-weight: 600; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                              <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S1.228 3.19 1.228 3.896c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-terminal">
+                    <div class="terminal-container">
+                        <div class="terminal-header">
+                            <div class="term-btn close"></div>
+                            <div class="term-btn min"></div>
+                            <div class="term-btn max"></div>
+                            <div class="term-title">aditya@macbook:~</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="neofetch">
+                                <div class="neo-logo">
+                                    <pre style="color: #38bdf8;">
+                    'c.
+                 ,xNMM.
+               .OMMMMo
+               OMMM0,
+     .;teKxc.  oNO'
+   ,dNMMMMMMMMMMMN,
+  xMMMMMMMMMMMMMMMo
+ 'MMMMMMMMMMMMMMMMM.
+ .MMMMMMMMMMMMMMMMM.
+  OMMMMMMMMMMMMMMM0
+   +MMMMMMMMMMMMMM.
+    +NMMMMMMMMMMo
+      .d0K0000k'
+</pre>
+                                </div>
+                                <div class="neo-info">
+                                    <p><span class="neo-title">aditya</span>@<span class="neo-title">macbook</span></p>
+                                    <p>-----------------</p>
+                                    <p><span class="neo-key">OS</span>: macOS Sonoma 14.5</p>
+                                    <p><span class="neo-key">Host</span>: MacBook Pro</p>
+                                    <p><span class="neo-key">Kernel</span>: Darwin 23.5.0</p>
+                                    <p><span class="neo-key">Uptime</span>: 9 years, 2 days</p>
+                                    <p><span class="neo-key">Packages</span>: 1337 (brew)</p>
+                                    <p><span class="neo-key">Shell</span>: zsh 5.9</p>
+                                    <p><span class="neo-key">Role</span>: System Admin</p>
+                                    <p><span class="neo-key">Tech</span>: Linux, Zimbra</p>
+                                    <br>
+                                    <div class="neo-colors">
+                                        <span class="c1"></span><span class="c2"></span><span class="c3"></span><span
+                                            class="c4"></span><span class="c5"></span><span class="c6"></span><span
+                                            class="c7"></span><span class="c8"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -61,17 +126,21 @@
             <div class="container hidden">
                 <h2 class="section-title">Work Experience</h2>
                 <div class="timeline">
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-card">
                             <h3>System Administrator</h3>
                             <h4>PT. Jabetto Maraya | <span>2021 – Current</span></h4>
                             <ul>
-                                <li>Lead the administration and maintenance of Zimbra Mail Servers for enterprise-level clients.</li>
-                                <li>Develop comprehensive project proposals and technical roadmaps for new infrastructure deployments.</li>
-                                <li>Conduct Research and Development (R&D) to integrate emerging technologies into the company's product portfolio.</li>
-                                <li>Resolved complex mail-routing issues. Success to do migration with zero data loss.</li>
+                                <li>Lead the administration and maintenance of Zimbra Mail Servers for enterprise-level
+                                    clients.</li>
+                                <li>Develop comprehensive project proposals and technical roadmaps for new
+                                    infrastructure deployments.</li>
+                                <li>Conduct Research and Development (R&D) to integrate emerging technologies into the
+                                    company's product portfolio.</li>
+                                <li>Resolved complex mail-routing issues. Success to do migration with zero data loss.
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -82,10 +151,14 @@
                             <h3>System Network Administrator</h3>
                             <h4>PT. Global Konten Media | <span>2019 – 2021</span></h4>
                             <ul>
-                                <li>Managed integrated system and network architectures utilizing Citrix XenServer virtualization.</li>
-                                <li>Configured and maintained secure Mikrotik VPN Site-to-Site tunnels for inter-branch connectivity.</li>
-                                <li>Implemented proactive infrastructure health tracking using Zabbix monitoring tools.</li>
-                                <li>Reduced incident response time by 30% through the implementation of automated monitoring alerts and dashboards.</li>
+                                <li>Managed integrated system and network architectures utilizing Citrix XenServer
+                                    virtualization.</li>
+                                <li>Configured and maintained secure Mikrotik VPN Site-to-Site tunnels for inter-branch
+                                    connectivity.</li>
+                                <li>Implemented proactive infrastructure health tracking using Zabbix monitoring tools.
+                                </li>
+                                <li>Reduced incident response time by 30% through the implementation of automated
+                                    monitoring alerts and dashboards.</li>
                             </ul>
                         </div>
                     </div>
@@ -96,9 +169,12 @@
                             <h3>System Administrator & NOC</h3>
                             <h4>PT. Media Andalan Nusa | <span>2017 – 2019</span></h4>
                             <ul>
-                                <li>Oversaw Data Center server management utilizing WHM, cPanel, and bare-metal Linux configurations.</li>
-                                <li>Provided Tier 2/3 technical support and real-time system monitoring to ensure service stability.</li>
-                                <li>Maintained high-availability standards for hosted clients by optimizing data center traffic and server load balancing.</li>
+                                <li>Oversaw Data Center server management utilizing WHM, cPanel, and bare-metal Linux
+                                    configurations.</li>
+                                <li>Provided Tier 2/3 technical support and real-time system monitoring to ensure
+                                    service stability.</li>
+                                <li>Maintained high-availability standards for hosted clients by optimizing data center
+                                    traffic and server load balancing.</li>
                             </ul>
                         </div>
                     </div>
@@ -107,11 +183,12 @@
             </div>
         </section>
 
-        <!-- Skills Section -->
+        <!-- Skills & Hands-On Section -->
         <section id="skills" class="section">
             <div class="container hidden">
-                <h2 class="section-title">Skills</h2>
-                <div class="skills-grid">
+                <h2 class="section-title">Skills & Expertise</h2>
+
+                <div class="skills-grid" style="margin-bottom: 4rem;">
                     <div class="skill-card glass-card">
                         <h3>Server Administration</h3>
                         <p>Zimbra (Certified), RedHat (Certified), Linux (Ubuntu/CentOS), WHM/cPanel.</p>
@@ -129,6 +206,33 @@
                         <p>Project Management, Advanced Troubleshooting, Research & Development.</p>
                     </div>
                 </div>
+
+                <h3
+                    style="text-align: center; color: var(--accent); margin-bottom: 2rem; font-family: var(--font-heading); font-size: 2rem;">
+                    Hands-on Experience</h3>
+                <div class="skills-grid">
+                    <div class="skill-card glass-card">
+                        <h3><span style="font-size: 1.5rem; margin-right: 8px;">⚙️</span> Provisioning</h3>
+                        <p>Hands-on automation using <strong>Ansible</strong> and <strong>Vagrant</strong> for seamless
+                            Infrastructure as Code (IaC).</p>
+                    </div>
+                    <div class="skill-card glass-card">
+                        <h3><span style="font-size: 1.5rem; margin-right: 8px;">🗄️</span> DB Clustering</h3>
+                        <p>Configuring robust database clustering and load balancing architectures using
+                            <strong>ProxySQL</strong>.
+                        </p>
+                    </div>
+                    <div class="skill-card glass-card">
+                        <h3><span style="font-size: 1.5rem; margin-right: 8px;">🔄</span> Data Sync</h3>
+                        <p>Implementing <strong>lsyncd</strong> for continuous, real-time file synchronization across
+                            multi-server environments.</p>
+                    </div>
+                    <div class="skill-card glass-card">
+                        <h3><span style="font-size: 1.5rem; margin-right: 8px;">🤖</span> AI Workflows</h3>
+                        <p>Familiar with modern <strong>Artificial Intelligence</strong> tools to accelerate
+                            troubleshooting and optimize sysadmin tasks.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -140,12 +244,13 @@
                 <div class="cert-gallery">
                     <div class="cert-item glass-card">
                         <div class="cert-img-container">
-                            <img src="assets/rhcsa.png" alt="Red Hat Certified System Administrator (RHCSA)" loading="lazy">
+                            <img src="assets/rhcsa.png" alt="Red Hat Certified System Administrator (RHCSA)"
+                                loading="lazy">
                         </div>
                         <h3>Red Hat Certified System Administrator</h3>
                         <p>ID: 230-145-187 | July 2023</p>
                     </div>
-                    
+
                     <div class="cert-item glass-card">
                         <div class="cert-img-container">
                             <img src="assets/vmware.png" alt="VMWare Learning Certification" loading="lazy">
@@ -156,7 +261,8 @@
 
                     <div class="cert-item glass-card">
                         <div class="cert-img-container">
-                            <img src="assets/zimbra.png" alt="Zimbra Collaboration System Administration" loading="lazy">
+                            <img src="assets/zimbra.png" alt="Zimbra Collaboration System Administration"
+                                loading="lazy">
                         </div>
                         <h3>Zimbra Collaboration System Admin</h3>
                         <p>Synacor | August 2022</p>
@@ -178,9 +284,9 @@
             <div class="container hidden">
                 <h2 class="section-title">Key Projects</h2>
                 <p class="section-subtitle">Key enterprise-scale infrastructure implementations and migrations.</p>
-                
+
                 <div class="project-grid">
-                    
+
                     <div class="project-card glass-card">
                         <div class="project-year">2025</div>
                         <h3>Kementrian Kesehatan RI</h3>
@@ -208,7 +314,7 @@
                         <p>Carbonio CE Mail Server Install, Upgrade & Migration.</p>
                         <span class="tag">Carbonio CE</span> <span class="tag">Migration</span>
                     </div>
-                    
+
                     <div class="project-card glass-card">
                         <div class="project-year">2024</div>
                         <h3>China Construction Bank Indonesia</h3>
@@ -229,7 +335,7 @@
                         <p>Zimbra OSE Mail Server Installation Zimbra DRC.</p>
                         <span class="tag">Zimbra OSE</span> <span class="tag">DRC</span>
                     </div>
-                    
+
                     <div class="project-card glass-card">
                         <div class="project-year">2023</div>
                         <h3>Suparma Tbk</h3>
@@ -265,4 +371,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

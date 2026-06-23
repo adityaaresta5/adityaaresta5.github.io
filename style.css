@@ -70,23 +70,15 @@ body {
     right: -200px;
 }
 
-/* Floating Animated Objects */
-.floating-obj {
-    position: absolute;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent) 0%, transparent 100%);
-    opacity: 0.2;
-    z-index: -1;
-    animation: float 10s infinite ease-in-out alternate;
-}
-
-.obj-1 { width: 120px; height: 120px; top: 15%; left: 10%; animation-duration: 12s; }
-.obj-2 { width: 180px; height: 180px; top: 55%; right: 5%; animation-duration: 15s; animation-direction: alternate-reverse; }
-.obj-3 { width: 90px; height: 90px; bottom: 10%; left: 20%; animation-duration: 9s; }
-
-@keyframes float {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    100% { transform: translate(30px, -50px) rotate(45deg); }
+/* Particle Network Canvas */
+#particles-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    pointer-events: none;
 }
 
 .container {
@@ -206,20 +198,48 @@ h1, h2, h3, h4 {
     padding: 6rem 0;
 }
 
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+}
+
 .glass-card {
+    position: relative;
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease, border-color 0.5s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 2px;
+    background: var(--glass-border);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    transition: background 0.5s ease;
 }
 
 .glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--card-shadow);
-    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.glass-card:hover::before {
+    background: conic-gradient(from var(--border-angle), #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3, #ff0000);
+    animation: rotate-border 2.5s linear infinite;
+}
+
+@keyframes rotate-border {
+    to { --border-angle: 360deg; }
 }
 
 .btn {
@@ -248,6 +268,115 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     padding-top: 5rem;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+@media (max-width: 968px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Terminal Mac Style */
+.terminal-container {
+    background: #1e1e1e;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+}
+
+[data-theme="light"] .terminal-container {
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+}
+
+.terminal-header {
+    background: #323232;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid #111;
+}
+
+.term-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.term-btn.close { background: #ff5f56; }
+.term-btn.min { background: #ffbd2e; }
+.term-btn.max { background: #27c93f; }
+
+.term-title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    color: #bbb;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.terminal-body {
+    padding: 20px;
+    color: #fff;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.neofetch {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.neo-logo pre {
+    margin: 0;
+    font-size: 0.75rem;
+    line-height: 1.1;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+}
+
+.neo-info p {
+    margin: 0;
+    color: #e6e6e6;
+}
+
+.neo-title { color: #38bdf8; font-weight: bold; }
+.neo-key { color: #38bdf8; font-weight: bold; }
+
+.neo-colors {
+    display: flex;
+}
+.neo-colors span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+}
+.c1 { background: #1e1e1e; }
+.c2 { background: #ff5f56; }
+.c3 { background: #27c93f; }
+.c4 { background: #ffbd2e; }
+.c5 { background: #38bdf8; }
+.c6 { background: #a855f7; }
+.c7 { background: #0284c7; }
+.c8 { background: #f8fafc; }
+
+@media (max-width: 600px) {
+    .neofetch {
+        flex-direction: column;
+    }
 }
 
 .greeting {
