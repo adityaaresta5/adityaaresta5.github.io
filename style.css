@@ -163,17 +163,17 @@ nav {
     padding-top: 72px; 
 }
 .display-headline {
-    font-family: var(--font-control-compressed);
-    font-size: var(--text-display);
-    font-weight: 900;
-    line-height: 0.9;
-    letter-spacing: -2px;
-    text-transform: uppercase;
+    font-family: var(--font-control-cursive);
+    font-size: 96px;
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
     color: var(--color-whiteout);
     width: 100%;
-    margin-bottom: var(--spacing-16);
-    /* Subtle shadow for contrast on bright sky */
-    text-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    margin-bottom: var(--spacing-8);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .dual-headline {
     font-family: var(--font-control-tnt);
