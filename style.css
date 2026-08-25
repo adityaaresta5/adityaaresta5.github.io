@@ -350,35 +350,38 @@ nav {
 /* Carousel Container */
 .carousel-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
-    overflow: visible; /* To allow slides zooming in */
+    overflow: hidden; /* Hide neighboring slides for a focused centered look */
     position: relative;
     padding: var(--spacing-32) 0;
 }
 .carousel-track {
     display: flex;
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     align-items: center;
+    /* transition is handled in JS */
 }
 .carousel-slide {
+    flex: 0 0 100%; /* Force exactly 100% of container width */
     min-width: 100%;
     box-sizing: border-box;
-    padding: 0 40px;
+    padding: 20px 40px;
     transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-    transform: scale(0.8);
+    transform: scale(0.85); /* Slightly smaller when inactive */
     opacity: 0.3;
     position: relative;
+    pointer-events: none;
 }
 .carousel-slide.active-slide {
-    transform: scale(1.1);
+    transform: scale(1);
     opacity: 1;
     z-index: 10;
+    pointer-events: auto;
 }
 /* Glass bg for carousel */
 .carousel-slide .glass-bg {
     position: absolute;
-    top: 0; left: 40px; right: 40px; bottom: 0;
+    top: 20px; left: 40px; right: 40px; bottom: 20px;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);

@@ -46,23 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Carousel Logic
 const track = document.getElementById('cert-track');
-const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+let slides = Array.from(document.querySelectorAll('.carousel-slide'));
 if (track && slides.length > 0) {
-    let currentSlide = 0;
     slides[0].classList.add('active-slide');
 
     setInterval(() => {
-        slides[currentSlide].classList.remove('active-slide');
+        slides[0].classList.remove('active-slide');
         
         setTimeout(() => {
-            currentSlide = (currentSlide + 1) % slides.length;
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            track.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            track.style.transform = 'translateX(-100%)';
             
             setTimeout(() => {
-                slides[currentSlide].classList.add('active-slide');
-            }, 800);
-        }, 1200);
+                slides[1].classList.add('active-slide');
+                
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    track.appendChild(slides[0]);
+                    track.style.transform = 'translateX(0)';
+                    
+                    // Update slides array to match new DOM
+                    slides = Array.from(document.querySelectorAll('.carousel-slide'));
+                }, 1200); // Wait for zoom-in to finish
+            }, 800); // Wait for track to slide
+        }, 1200); // Wait for zoom-out to finish
     }, 6000); // Switch every 6s
 }
 
