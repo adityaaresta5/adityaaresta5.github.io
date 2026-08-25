@@ -350,77 +350,67 @@ nav {
 /* Carousel Container */
 .carousel-container {
     width: 100%;
-    max-width: 850px;
+    max-width: 100vw;
     margin: 0 auto;
-    overflow: hidden; /* Hide neighboring slides for a focused centered look */
+    overflow: hidden; 
     position: relative;
-    padding: var(--spacing-32) 0;
+    padding: var(--spacing-48) 0;
 }
 .carousel-track {
     display: flex;
     align-items: center;
-    /* transition is handled in JS */
+    /* Track will be dynamically centered via JS */
 }
 .carousel-slide {
-    flex: 0 0 100%; /* Force exactly 100% of container width */
-    min-width: 100%;
+    flex: 0 0 450px; /* Fixed width for each slide */
     box-sizing: border-box;
-    padding: 20px 40px;
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
-    transform: scale(0.85); /* Slightly smaller when inactive */
-    opacity: 0.3;
+    padding: 20px;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease, filter 1.2s ease;
+    transform: scale(0.7); /* Smaller when inactive */
+    opacity: 0.4;
+    filter: blur(5px); /* Samar untuk yang tidak aktif */
     position: relative;
     pointer-events: none;
 }
 .carousel-slide.active-slide {
-    transform: scale(1);
+    transform: scale(1.35); /* Zoom bigger! */
     opacity: 1;
+    filter: blur(0);
     z-index: 10;
     pointer-events: auto;
 }
-/* Glass bg for carousel */
-.carousel-slide .glass-bg {
-    position: absolute;
-    top: 20px; left: 40px; right: 40px; bottom: 20px;
+
+/* Image Card (Certificates) with Glass Background */
+.image-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-images);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    z-index: -1;
-}
-
-/* Image Card (Certificates) */
-.image-card {
-    background: transparent;
-    border-radius: var(--radius-images);
+    padding: 24px;
+    text-align: center;
 }
 .image-card img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: contain;
     display: block;
-    border-radius: var(--radius-images);
-    padding: 20px;
-    cursor: pointer;
+    border-radius: 8px;
+    cursor: zoom-in;
+    margin-bottom: 16px;
     transition: transform 0.3s ease;
 }
 .image-card img:hover {
-    transform: scale(1.03);
-}
-.image-card-caption {
-    margin-top: var(--spacing-12);
-    text-align: center;
-    padding-bottom: 20px;
+    transform: scale(1.05);
 }
 .image-card-caption h3 {
-    font-size: var(--text-body);
+    font-size: 18px;
     color: var(--color-whiteout);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .image-card-caption p {
-    font-size: var(--text-caption);
+    font-size: 12px;
     color: rgba(255,255,255,0.8);
 }
 

@@ -48,17 +48,25 @@ document.addEventListener('DOMContentLoaded', () => {
 const track = document.getElementById('cert-track');
 let slides = Array.from(document.querySelectorAll('.carousel-slide'));
 if (track && slides.length > 0) {
-    slides[0].classList.add('active-slide');
+    // 3-item carousel architecture: Move last slide to front so index 1 is in center
+    track.insertBefore(slides[slides.length - 1], slides[0]);
+    slides = Array.from(document.querySelectorAll('.carousel-slide'));
+    
+    // Center index 1. Slide is 450px wide.
+    // 450 * 1.5 = 675px offset from 50%
+    track.style.marginLeft = 'calc(50% - 675px)';
+
+    slides[1].classList.add('active-slide');
 
     setInterval(() => {
-        slides[0].classList.remove('active-slide');
+        slides[1].classList.remove('active-slide');
         
         setTimeout(() => {
             track.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-            track.style.transform = 'translateX(-100%)';
+            track.style.transform = 'translateX(-450px)';
             
             setTimeout(() => {
-                slides[1].classList.add('active-slide');
+                slides[2].classList.add('active-slide');
                 
                 setTimeout(() => {
                     track.style.transition = 'none';
@@ -67,9 +75,9 @@ if (track && slides.length > 0) {
                     
                     // Update slides array to match new DOM
                     slides = Array.from(document.querySelectorAll('.carousel-slide'));
-                }, 1200); // Wait for zoom-in to finish
-            }, 800); // Wait for track to slide
-        }, 1200); // Wait for zoom-out to finish
+                }, 1200); // Wait for zoom-in
+            }, 800); // Wait for slide
+        }, 1200); // Wait for zoom-out
     }, 6000); // Switch every 6s
 }
 
