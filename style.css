@@ -160,7 +160,9 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 72px; 
+    padding-top: 72px;
+    position: relative;
+    overflow: hidden; /* Prevent letters from flying over other sections */
 }
 .display-headline {
     font-family: var(--font-control-cursive);
@@ -181,21 +183,38 @@ nav {
 .display-headline .letter {
     display: inline-block;
     opacity: 0;
-    animation: flyIn 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-name: flyInOut;
+    animation-duration: 8s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
     transform: translate(var(--startX), var(--startY)) rotate(var(--rot, 45deg)) scale(0.2);
     will-change: transform, opacity, filter;
 }
 
-@keyframes flyIn {
+@keyframes flyInOut {
     0% {
         opacity: 0;
         transform: translate(var(--startX), var(--startY)) rotate(var(--rot, 45deg)) scale(0.2);
         filter: blur(20px);
     }
-    100% {
+    15% {
         opacity: 1;
         transform: translate(0, 0) rotate(0deg) scale(1);
         filter: blur(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        filter: blur(0);
+    }
+    90% {
+        opacity: 0;
+        transform: translate(calc(var(--startX) * -1), calc(var(--startY) * -1)) rotate(calc(var(--rot, 45deg) * -1)) scale(0.2);
+        filter: blur(20px);
+    }
+    100% {
+        opacity: 0;
     }
 }
 .dual-headline {
