@@ -44,18 +44,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
+// Carousel Logic
+const track = document.getElementById('cert-track');
+const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+if (track && slides.length > 0) {
+    let currentSlide = 0;
+    slides[0].classList.add('active-slide');
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active-slide');
+        
+        setTimeout(() => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            
+            setTimeout(() => {
+                slides[currentSlide].classList.add('active-slide');
+            }, 800);
+        }, 1200);
+    }, 6000); // Switch every 6s
+}
+
 // Lightbox Logic
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn = document.querySelector('.lightbox-close');
 const certImages = document.querySelectorAll('.image-card img');
+const prevBtn = document.getElementById('lightbox-prev');
+const nextBtn = document.getElementById('lightbox-next');
 
-certImages.forEach(img => {
+let currentLightboxIndex = 0;
+const imageSources = Array.from(certImages).map(img => img.src);
+
+certImages.forEach((img, index) => {
     img.style.cursor = 'zoom-in';
     img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
+        currentLightboxIndex = index;
+        lightboxImg.src = imageSources[currentLightboxIndex];
         lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling while open
+        document.body.style.overflow = 'hidden'; 
     });
 });
 
@@ -65,8 +93,20 @@ closeBtn.addEventListener('click', () => {
 });
 
 lightbox.addEventListener('click', (e) => {
-    if (e.target !== lightboxImg) {
+    if (e.target !== lightboxImg && e.target !== prevBtn && e.target !== nextBtn) {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
     }
 });
+
+if(prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+        currentLightboxIndex = (currentLightboxIndex - 1 + imageSources.length) % imageSources.length;
+        lightboxImg.src = imageSources[currentLightboxIndex];
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentLightboxIndex = (currentLightboxIndex + 1) % imageSources.length;
+        lightboxImg.src = imageSources[currentLightboxIndex];
+    });
+}

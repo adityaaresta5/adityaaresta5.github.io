@@ -347,11 +347,51 @@ nav {
     margin-bottom: var(--spacing-16);
 }
 
+/* Carousel Container */
+.carousel-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: visible; /* To allow slides zooming in */
+    position: relative;
+    padding: var(--spacing-32) 0;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    align-items: center;
+}
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 40px;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.2s ease;
+    transform: scale(0.8);
+    opacity: 0.3;
+    position: relative;
+}
+.carousel-slide.active-slide {
+    transform: scale(1.1);
+    opacity: 1;
+    z-index: 10;
+}
+/* Glass bg for carousel */
+.carousel-slide .glass-bg {
+    position: absolute;
+    top: 0; left: 40px; right: 40px; bottom: 0;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-images);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
 /* Image Card (Certificates) */
 .image-card {
     background: transparent;
     border-radius: var(--radius-images);
-    overflow: hidden;
 }
 .image-card img {
     width: 100%;
@@ -359,12 +399,17 @@ nav {
     object-fit: contain;
     display: block;
     border-radius: var(--radius-images);
-    background: rgba(255,255,255,0.05); 
     padding: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.image-card img:hover {
+    transform: scale(1.03);
 }
 .image-card-caption {
     margin-top: var(--spacing-12);
     text-align: center;
+    padding-bottom: 20px;
 }
 .image-card-caption h3 {
     font-size: var(--text-body);
@@ -451,43 +496,64 @@ footer {
 
 /* Lightbox Styles */
 .lightbox {
-    visibility: hidden;
     position: fixed;
-    z-index: 9999;
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background-color: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
-    opacity: 0;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 .lightbox.active {
-    visibility: visible;
     opacity: 1;
+    pointer-events: auto;
 }
-.lightbox-img {
+.lightbox-content {
     max-width: 90%;
-    max-height: 90vh;
-    object-fit: contain;
-    border-radius: var(--radius-lg);
+    max-height: 90%;
     transform: scale(0.9);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    border-radius: 8px;
 }
-.lightbox.active .lightbox-img {
+.lightbox.active .lightbox-content {
     transform: scale(1);
 }
 .lightbox-close {
     position: absolute;
-    top: 24px;
-    right: 32px;
-    color: var(--color-whiteout);
+    top: 20px;
+    right: 40px;
+    color: white;
     font-size: 40px;
-    font-weight: 300;
+    font-weight: bold;
     cursor: pointer;
-    transition: color 0.2s ease;
+    transition: color 0.3s;
+    z-index: 1001;
 }
 .lightbox-close:hover {
     color: var(--color-signal-blue);
 }
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 20px;
+    user-select: none;
+    z-index: 1002;
+    transition: color 0.3s, transform 0.2s;
+}
+.lightbox-prev:hover, .lightbox-next:hover {
+    color: var(--color-signal-blue);
+    transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev { left: 40px; }
+.lightbox-next { right: 40px; }
