@@ -44,7 +44,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100);
 });
 
-// Carousel Logic
+// Solitaire Skills Deck Logic
+const deckContainer = document.getElementById('skills-deck');
+const skillCards = document.querySelectorAll('.skill-card');
+
+function calculateStackTransforms() {
+    if (!deckContainer) return;
+    
+    skillCards.forEach((card, index) => {
+        // Find natural grid position relative to container
+        const cardWidth = card.offsetWidth;
+        const cardHeight = card.offsetHeight;
+        
+        // Target center of the container
+        const stackX = (deckContainer.offsetWidth / 2) - (cardWidth / 2);
+        const stackY = (deckContainer.offsetHeight / 2) - (cardHeight / 2);
+        
+        const dx = stackX - card.offsetLeft;
+        const dy = stackY - card.offsetTop;
+        
+        // Fan out rotation: cards in middle are straight, edges are rotated
+        const rot = (index - (skillCards.length - 1) / 2) * 4; // Spread from negative to positive degrees
+        
+        card.style.setProperty('--dx', `${dx}px`);
+        card.style.setProperty('--dy', `${dy}px`);
+        card.style.setProperty('--rot', `${rot}deg`);
+        card.style.setProperty('--z', index);
+    });
+}
+
+// Recalculate on resize in case grid changes
+window.addEventListener('resize', calculateStackTransforms);
+
+if (deckContainer) {
+    // Initial calculation (slight delay to let font load and layout settle)
+    setTimeout(calculateStackTransforms, 100);
+
+    // Deal cards on click
+    deckContainer.addEventListener('click', () => {
+        if (deckContainer.classList.contains('stacked')) {
+            deckContainer.classList.remove('stacked');
+        }
+    });
+
+    // Restack when completely scrolled out of view
+    const deckObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                deckContainer.classList.add('stacked');
+                calculateStackTransforms(); // recalculate just in case
+            }
+        });
+    }, { threshold: 0, rootMargin: '100px' });
+    
+    deckObserver.observe(deckContainer);
+}
 const track = document.getElementById('cert-track');
 let slides = Array.from(document.querySelectorAll('.carousel-slide'));
 if (track && slides.length > 0) {

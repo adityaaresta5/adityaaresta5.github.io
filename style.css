@@ -269,6 +269,60 @@ nav {
     gap: var(--spacing-24);
 }
 
+/* Skills Deck (Solitaire Animation) */
+.skills-deck-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-24);
+    position: relative;
+    margin-bottom: var(--spacing-48);
+    perspective: 1000px;
+}
+.skills-deck-container.stacked {
+    cursor: pointer;
+}
+.skill-card {
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease, opacity 0.8s ease;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    z-index: 1;
+}
+.skills-deck-container.stacked .skill-card {
+    transform: translate(var(--dx, 0), var(--dy, 0)) rotate(var(--rot, 0deg)) scale(0.95);
+    z-index: var(--z, 1);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    /* No pointer events on individual cards when stacked so click goes to container */
+    pointer-events: none;
+}
+.skills-deck-container.stacked:hover .skill-card {
+    transform: translate(var(--dx, 0), calc(var(--dy, 0) - 15px)) rotate(calc(var(--rot, 0deg) * 1.5)) scale(0.98);
+}
+.deck-hint {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, 150px);
+    color: var(--color-signal-blue);
+    font-family: var(--font-control-cursive);
+    font-size: 24px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 100;
+}
+.skills-deck-container.stacked .deck-hint {
+    opacity: 1;
+}
+
+/* Deal Animation Delays */
+.skills-deck-container:not(.stacked) .skill-card:nth-child(1) { transition-delay: 0.0s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(2) { transition-delay: 0.05s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(3) { transition-delay: 0.1s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(4) { transition-delay: 0.15s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(5) { transition-delay: 0.2s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(6) { transition-delay: 0.25s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(7) { transition-delay: 0.3s; }
+.skills-deck-container:not(.stacked) .skill-card:nth-child(8) { transition-delay: 0.35s; }
+
+
 .haze-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(16px);
