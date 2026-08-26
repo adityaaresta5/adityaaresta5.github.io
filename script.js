@@ -137,7 +137,7 @@ if (track && slides.length > 0) {
         slides[1].classList.remove('active-slide');
         
         setTimeout(() => {
-            track.style.transition = 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
+            track.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
             track.style.transform = 'translateX(-450px)';
             
             setTimeout(() => {
@@ -150,10 +150,10 @@ if (track && slides.length > 0) {
                     
                     // Update slides array to match new DOM
                     slides = Array.from(document.querySelectorAll('.carousel-slide'));
-                }, 1200); // Wait for zoom-in
-            }, 800); // Wait for slide
-        }, 1200); // Wait for zoom-out
-    }, 6000); // Switch every 6s
+                }, 800); // Wait for zoom-in
+            }, 600); // Wait for slide
+        }, 800); // Wait for zoom-out
+    }, 3500); // Switch every 3.5s
 }
 
 // Lightbox Logic
