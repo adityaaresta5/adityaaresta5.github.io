@@ -86,6 +86,27 @@ if (deckContainer) {
             deckContainer.classList.remove('stacked');
         }
     });
+    
+    // 3D Parallax Hover Effect
+    deckContainer.addEventListener('mousemove', (e) => {
+        if (!deckContainer.classList.contains('stacked')) return;
+        
+        const rect = deckContainer.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Normalize coordinates to -1 (left/top) to +1 (right/bottom)
+        const xNorm = (x / rect.width - 0.5) * 2;
+        const yNorm = (y / rect.height - 0.5) * 2;
+        
+        deckContainer.style.setProperty('--mouse-x', xNorm);
+        deckContainer.style.setProperty('--mouse-y', yNorm);
+    });
+
+    deckContainer.addEventListener('mouseleave', () => {
+        deckContainer.style.setProperty('--mouse-x', 0);
+        deckContainer.style.setProperty('--mouse-y', 0);
+    });
 
     // Restack when completely scrolled out of view
     const deckObserver = new IntersectionObserver((entries) => {
