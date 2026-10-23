@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sangfor — Documentation</title>
-<meta name="description" content="Modul Sangfor HCI: fondasi infrastruktur terkonvergensi, aSV, aSAN, aNET, dan cara menghitung kapasitas cluster.">
+<meta name="description" content="Modul Sangfor HCI: fondasi infrastruktur terkonvergensi, aSV, aSAN, aNET, kapasitas cluster, instalasi firmware, sampai konfigurasi dasar platform.">
 <meta name="theme-color" content="#050912">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23070e1b'/%3E%3Cg fill='none' stroke='%2322d3ee' stroke-width='1.7' stroke-linejoin='round'%3E%3Cpath d='M12 4 4 8l8 4 8-4-8-4Z'/%3E%3Cpath d='m4 12 8 4 8-4'/%3E%3Cpath d='m4 16 8 4 8-4'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="stylesheet" href="../assets/site.css">
@@ -41,13 +41,13 @@
     <nav class="crumb rise" aria-label="Breadcrumb">
       <a href="../">Documentation</a><span>/</span><span>Sangfor</span>
     </nav>
-    <div class="eyebrow rise"><i></i> Sangfor · 02 modul</div>
+    <div class="eyebrow rise"><i></i> Sangfor · 03 modul</div>
     <h1 class="rise d1"><span class="grad">Sangfor HCI</span></h1>
-    <p class="lead rise d2">Dua modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser.</p>
+    <p class="lead rise d2">Tiga modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser, dan berlanjut ke konfigurasi dasar: login, interface, agregasi, lisensi, sampai deployment cluster.</p>
     <div class="hero-meta rise d3">
-      <div><b>02</b><span>Modul</span></div>
-      <div><b>60</b><span>Slide</span></div>
-      <div><b>±85</b><span>Menit</span></div>
+      <div><b>03</b><span>Modul</span></div>
+      <div><b>107</b><span>Slide</span></div>
+      <div><b>±145</b><span>Menit</span></div>
     </div>
   </section>
 
@@ -56,7 +56,7 @@
       <span class="idx">01</span>
       <h2 id="modul">Modul tersedia</h2>
       <span class="rule"></span>
-      <span class="count">2 dokumen</span>
+      <span class="count">3 dokumen</span>
     </div>
 
     <div class="mods">
@@ -91,12 +91,28 @@
           </span>
         </div>
       </a>
+
+      <a class="mod rise d4" href="./hci-6.9.1-konfigurasi-dasar/" aria-label="Buka modul Sangfor HCI 6.9.1 — Konfigurasi Dasar">
+        <span class="mod-num">03</span>
+        <div class="mod-body">
+          <div class="mod-kicker"><i></i> Sangfor Academy · Part 3</div>
+          <h3>Sangfor HCI 6.9.1 — Konfigurasi Dasar</h3>
+          <p>Modul interaktif dari 47 slide training: login platform, membagi tugas 4 lapis interface, merakit agregasi dengan bond mode dan flow control, mengunci lisensi USB, sampai deployment cluster 2 dan 3 node.</p>
+          <div class="chips"><span>Login</span><span>Interface</span><span>Agregasi</span><span>Lisensi</span><span>Deployment</span></div>
+        </div>
+        <div class="mod-side">
+          <span class="mod-meta">47 slide · 6 part<br>±60 menit · Bahasa Indonesia</span>
+          <span class="go">Buka modul
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
     </div>
 
     <div class="panel rise d3">
       <div class="panel-main">
         <h3>Tentang seri ini</h3>
-        <p>Seri ini dibagi dua modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster.</p>
+        <p>Seri ini dibagi tiga modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster. Part 3 menutup konfigurasi dasar: login platform, pembagian 4 lapis interface, agregasi bersama switch, lisensi USB, sampai deployment cluster multi-node.</p>
       </div>
       <div class="panel-side">
         <h4>Yang dibahas</h4>
@@ -111,6 +127,11 @@
           <li>Menulis USB bootable dengan UltraISO</li>
           <li>13 layar installer, layar demi layar</li>
           <li>Checklist verifikasi 10 item sebelum join</li>
+          <li>Login IPMI dan web console platform</li>
+          <li>4 lapis interface: management, overlay, storage, edge</li>
+          <li>Bond mode dan flow control bersama switch</li>
+          <li>Lisensi edisi, USB key, dan virtual key</li>
+          <li>Deployment cluster 2 dan 3 node</li>
         </ul>
       </div>
     </div>
