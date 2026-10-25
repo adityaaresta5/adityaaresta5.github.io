@@ -41,13 +41,13 @@
     <nav class="crumb rise" aria-label="Breadcrumb">
       <a href="../">Documentation</a><span>/</span><span>Sangfor</span>
     </nav>
-    <div class="eyebrow rise"><i></i> Sangfor · 04 modul</div>
+    <div class="eyebrow rise"><i></i> Sangfor · 05 modul</div>
     <h1 class="rise d1"><span class="grad">Sangfor HCI</span></h1>
-    <p class="lead rise d2">Empat modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser, konfigurasi dasar platform (interface, agregasi, lisensi), hingga inisialisasi cluster multi-node dan virtual storage (aSAN).</p>
+    <p class="lead rise d2">Lima modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser, konfigurasi dasar platform (interface, agregasi, lisensi), inisialisasi cluster multi-node dan virtual storage (aSAN), hingga operasi virtual machine (spesifikasi hardware, alur instalasi OS, clone, import/export, dan optimasi Sangfor vmTools).</p>
     <div class="hero-meta rise d3">
-      <div><b>04</b><span>Modul</span></div>
-      <div><b>146</b><span>Slide</span></div>
-      <div><b>±195</b><span>Menit</span></div>
+      <div><b>05</b><span>Modul</span></div>
+      <div><b>189</b><span>Slide</span></div>
+      <div><b>±250</b><span>Menit</span></div>
     </div>
   </section>
 
@@ -56,7 +56,7 @@
       <span class="idx">01</span>
       <h2 id="modul">Modul tersedia</h2>
       <span class="rule"></span>
-      <span class="count">4 dokumen</span>
+      <span class="count">5 dokumen</span>
     </div>
 
     <div class="mods">
@@ -122,12 +122,27 @@
           </span>
         </div>
       </a>
+      <a class="mod rise d4" href="./hci-6.9.1-operasi-vm/" aria-label="Buka modul Sangfor HCI 6.9.1 — Operasi Virtual Machine">
+        <span class="mod-num">05</span>
+        <div class="mod-body">
+          <div class="mod-kicker"><i></i> Sangfor Academy · Part 5</div>
+          <h3>Sangfor HCI 6.9.1 — Operasi Virtual Machine</h3>
+          <p>Modul interaktif dari 43 slide training: spesifikasi hardware &amp; alokasi RAM 4 TB, format disk RAW/QCOW2, alur instalasi OS guest, 3 metode clone (instant, link, full), import/export aman, hingga optimasi driver Sangfor vmTools.</p>
+          <div class="chips"><span>Virtual Machine</span><span>vCPU &amp; RAM</span><span>Mode Disk</span><span>Clone</span><span>vmTools</span></div>
+        </div>
+        <div class="mod-side">
+          <span class="mod-meta">43 slide · 4 part<br>±55 menit · Bahasa Indonesia</span>
+          <span class="go">Buka modul
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
     </div>
 
     <div class="panel rise d3">
       <div class="panel-main">
         <h3>Tentang seri ini</h3>
-        <p>Seri ini dibagi empat modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster. Part 3 membedah konfigurasi dasar: login platform, pembagian 4 lapis interface, agregasi bersama switch, lisensi USB, sampai deployment cluster multi-node. Part 4 menuntaskan inisialisasi cluster dan virtual storage: peran cluster controller, alokasi VXLAN overlay, pemilihan mode interface storage, aturan arsitektur disk group (1 SSD cache per group), rumus kapasitas usable (Slide 36), hingga uji gateway storage.</p>
+        <p>Seri ini dibagi lima modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster. Part 3 membedah konfigurasi dasar: login platform, pembagian 4 lapis interface, agregasi bersama switch, lisensi USB, sampai deployment cluster multi-node. Part 4 menuntaskan inisialisasi cluster dan virtual storage: peran cluster controller, alokasi VXLAN overlay, pemilihan mode interface storage, aturan arsitektur disk group (1 SSD cache per group), rumus kapasitas usable (Slide 36), hingga uji gateway storage. Part 5 menuntaskan operasi virtual machine: alokasi vCPU dan RAM hingga 4 TB, mode disk RAW vs QCOW2, alur pembuatan VM baru dari ISO, perbandingan 3 metode clone (instant full, link, full), import berkas OVA/OVF, ekspor VM aman, hingga instalasi driver paravirtualisasi Sangfor vmTools.</p>
       </div>
       <div class="panel-side">
         <h4>Yang dibahas</h4>
@@ -155,6 +170,13 @@
           <li>Aturan disk group: 1 SSD cache per group</li>
           <li>Kalkulasi usable storage (Slide 36 formula)</li>
           <li>Uji gateway router dan monitoring dashboard aSAN</li>
+          <li>Alokasi vCPU, NUMA, dan RAM hingga 4 TB</li>
+          <li>Mode disk: Thin, Dynamic, Pre-allocate, RAW</li>
+          <li>Shared disk &amp; physical disk RDM mapping</li>
+          <li>Alur Create VM &amp; instalasi guest OS Windows/Linux</li>
+          <li>Perbandingan Instant Full Clone, Link Clone, &amp; Full Clone</li>
+          <li>Prosedur aman import &amp; export VM</li>
+          <li>Instalasi Sangfor vmTools Windows &amp; Linux</li>
         </ul>
       </div>
     </div>
