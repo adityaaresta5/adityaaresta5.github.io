@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenStack — Documentation</title>
+<meta name="description" content="Modul OpenStack: panduan lapangan deployment private cloud enterprise dengan Kolla-Ansible dan Ceph Quincy storage.">
+<meta name="theme-color" content="#050912">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23070e1b'/%3E%3Cg fill='none' stroke='%23ff6b4a' stroke-width='1.7' stroke-linejoin='round'%3E%3Cpath d='M4 8h16v8H4z'/%3E%3Cpath d='M4 12h16M8 8v8M16 8v8'/%3E%3Cpath d='M2 10v4M22 10v4'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <div class="grid"></div>
+  <div class="orb a"></div>
+  <div class="orb b"></div>
+  <div class="orb c"></div>
+</div>
+
+<header class="top" id="top">
+  <div class="wrap top-in">
+    <a class="brand" href="../../" aria-label="Kembali ke portofolio Aditya">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="url(#grad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#8b5cf6"/></linearGradient></defs>
+          <path d="M12 3 3 8l9 5 9-5-9-5Z"/><path d="m3 12 9 5 9-5"/><path d="m3 16 9 5 9-5"/>
+        </svg>
+      </span>
+      <span><b>Aditya</b><em>/ documentation</em></span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <a href="../">Documentation</a>
+      <a href="../../">Portfolio</a>
+      <a class="ghost" href="https://github.com/adityaaresta5" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero compact">
+    <nav class="crumb rise" aria-label="Breadcrumb">
+      <a href="../">Documentation</a><span>/</span><span>OpenStack</span>
+    </nav>
+    <div class="eyebrow ost rise"><i></i> OpenStack · 01 modul</div>
+    <h1 class="rise d1"><span class="coral">OpenStack Cloud</span></h1>
+    <p class="lead rise d2">Panduan lapangan private cloud enterprise: arsitektur multi-node, jaringan spine-leaf, storage Ceph, orkestrator Kolla-Ansible, dan verifikasi sistem. Semua modul bisa dibuka mandiri.</p>
+    <div class="hero-meta rise d3">
+      <div><b>01</b><span>Modul</span></div>
+      <div><b>01</b><span>Praktik</span></div>
+      <div><b>100%</b><span>Interaktif</span></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="modul">
+    <div class="sec-head rise">
+      <span class="idx">01</span>
+      <h2 id="modul">Modul tersedia</h2>
+      <span class="rule"></span>
+      <span class="count">1 dokumen</span>
+    </div>
+
+    <div class="mods">
+      <a class="mod ost rise d1" href="./openstack-yoga-ceph-private-cloud/" aria-label="Buka modul OpenStack Yoga + Ceph Quincy">
+        <span class="mod-num">01</span>
+        <div class="mod-body">
+          <div class="mod-kicker"><i></i> Panduan lapangan · 9 langkah</div>
+          <h3>OpenStack Yoga + Ceph Quincy</h3>
+          <p>Deploy private cloud multi-node dari rak kosong sampai HEALTH_OK: desain jaringan spine-leaf, bootstrap Cephadm, orkestrasi Kolla-Ansible, dan inisialisasi resource Horizon.</p>
+          <div class="chips"><span>OpenStack</span><span>Ceph</span><span>Kolla-Ansible</span><span>Private Cloud</span></div>
+        </div>
+        <div class="mod-side">
+          <span class="mod-meta">Panduan lapangan<br>4 fase · 9 langkah</span>
+          <span class="go">Buka modul
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <div class="panel rise d3">
+      <div class="panel-main">
+        <h3>Alur deployment private cloud</h3>
+        <p>Deployment private cloud dilakukan bertahap agar kegagalan dapat diisolasi lebih awal: mulai dari arsitektur fisik jaringan dan storage, bootstrap orkestrator, deploy layanan OpenStack, hingga inisialisasi image dan jaringan tenant.</p>
+      </div>
+      <div class="panel-side">
+        <h4>Alur singkat</h4>
+        <ul>
+          <li>01 — Desain jaringan &amp; IP planning</li>
+          <li>02 — Bootstrap host &amp; Ceph storage</li>
+          <li>03 — Kolla-Ansible deployment</li>
+          <li>04 — Inisialisasi resource &amp; verifikasi</li>
+        </ul>
+      </div>
+    </div>
+
+    <a class="backlink" href="../">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m11 18-6-6 6-6"/></svg>
+      Semua topik
+    </a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <p>Dibuat dan dirawat oleh <b>Aditya</b> · System Administrator</p>
+    <nav aria-label="Tautan footer">
+      <a href="../../">Portfolio</a>
+      <a href="../">Documentation</a>
+      <a href="https://github.com/adityaaresta5" target="_blank" rel="noopener">GitHub</a>
+      <a href="#top">Kembali ke atas ↑</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var top = document.getElementById('top');
+    function onScroll(){
+      if (window.scrollY > 8) top.classList.add('scrolled');
+      else top.classList.remove('scrolled');
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+  })();
+</script>
+</body>
+</html>
