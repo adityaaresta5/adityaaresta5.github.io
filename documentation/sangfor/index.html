@@ -41,13 +41,13 @@
     <nav class="crumb rise" aria-label="Breadcrumb">
       <a href="../">Documentation</a><span>/</span><span>Sangfor</span>
     </nav>
-    <div class="eyebrow rise"><i></i> Sangfor · 05 modul</div>
+    <div class="eyebrow rise"><i></i> Sangfor · 06 modul</div>
     <h1 class="rise d1"><span class="grad">Sangfor HCI</span></h1>
-    <p class="lead rise d2">Lima modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser, konfigurasi dasar platform (interface, agregasi, lisensi), inisialisasi cluster multi-node dan virtual storage (aSAN), hingga operasi virtual machine (spesifikasi hardware, alur instalasi OS, clone, import/export, dan optimasi Sangfor vmTools).</p>
+    <p class="lead rise d2">Enam modul berurutan: fondasi infrastruktur terkonvergensi — dari lima masalah data center tradisional, cara kerja aSV/aSAN/aNET, sampai menghitung kapasitas cluster — lalu praktiknya, dari server kosong di rak sampai node yang bisa dibuka di browser, konfigurasi dasar platform (interface, agregasi, lisensi), inisialisasi cluster multi-node dan virtual storage (aSAN), operasi virtual machine, hingga virtual network aNet dan deployment perangkat NFV (vNGAF, vIAM, vADC, Traffic Mirroring, Network Insight).</p>
     <div class="hero-meta rise d3">
-      <div><b>05</b><span>Modul</span></div>
-      <div><b>189</b><span>Slide</span></div>
-      <div><b>±250</b><span>Menit</span></div>
+      <div><b>06</b><span>Modul</span></div>
+      <div><b>226</b><span>Slide</span></div>
+      <div><b>±315</b><span>Menit</span></div>
     </div>
   </section>
 
@@ -56,7 +56,7 @@
       <span class="idx">01</span>
       <h2 id="modul">Modul tersedia</h2>
       <span class="rule"></span>
-      <span class="count">5 dokumen</span>
+      <span class="count">6 dokumen</span>
     </div>
 
     <div class="mods">
@@ -137,12 +137,27 @@
           </span>
         </div>
       </a>
+      <a class="mod rise d4" href="./hci-6.9.1-virtual-network-nfv/" aria-label="Buka modul Sangfor HCI 6.9.1 — Virtual Network &amp; NFV">
+        <span class="mod-num">06</span>
+        <div class="mod-body">
+          <div class="mod-kicker"><i></i> Sangfor Academy · Part 6</div>
+          <h3>Sangfor HCI 6.9.1 — Virtual Network &amp; NFV</h3>
+          <p>Modul interaktif dari 37 slide training: memvirtualisasikan jaringan fisik menjadi aNet, konfigurasi Physical Edge, port group, distributed virtual switch, virtual router, hingga deployment NFV (vNGAF, vIAM, vADC) dan Traffic Mirroring.</p>
+          <div class="chips"><span>aNet</span><span>Physical Edge</span><span>vSwitch &amp; vRouter</span><span>NFV</span><span>Traffic Mirroring</span></div>
+        </div>
+        <div class="mod-side">
+          <span class="mod-meta">37 slide · 5 part<br>±65 menit · Bahasa Indonesia</span>
+          <span class="go">Buka modul
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </span>
+        </div>
+      </a>
     </div>
 
     <div class="panel rise d3">
       <div class="panel-main">
         <h3>Tentang seri ini</h3>
-        <p>Seri ini dibagi lima modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster. Part 3 membedah konfigurasi dasar: login platform, pembagian 4 lapis interface, agregasi bersama switch, lisensi USB, sampai deployment cluster multi-node. Part 4 menuntaskan inisialisasi cluster dan virtual storage: peran cluster controller, alokasi VXLAN overlay, pemilihan mode interface storage, aturan arsitektur disk group (1 SSD cache per group), rumus kapasitas usable (Slide 36), hingga uji gateway storage. Part 5 menuntaskan operasi virtual machine: alokasi vCPU dan RAM hingga 4 TB, mode disk RAW vs QCOW2, alur pembuatan VM baru dari ISO, perbandingan 3 metode clone (instant full, link, full), import berkas OVA/OVF, ekspor VM aman, hingga instalasi driver paravirtualisasi Sangfor vmTools.</p>
+        <p>Seri ini dibagi enam modul yang saling menyambung. Part 1 jadi fondasi sebelum kamu menyentuh console: membaca diagram arsitektur, menjelaskan cara kerja storage terdistribusi, dan memilih jumlah replica dengan alasan yang jelas. Part 2 lanjut ke praktiknya — dari server kosong di rak sampai node yang bisa dibuka di browser, lengkap dengan 13 layar installer dan checklist verifikasi sebelum node boleh masuk cluster. Part 3 membedah konfigurasi dasar: login platform, pembagian 4 lapis interface, agregasi bersama switch, lisensi USB, sampai deployment cluster multi-node. Part 4 menuntaskan inisialisasi cluster dan virtual storage: peran cluster controller, alokasi VXLAN overlay, pemilihan mode interface storage, aturan arsitektur disk group (1 SSD cache per group), rumus kapasitas usable (Slide 36), hingga uji gateway storage. Part 5 menuntaskan operasi virtual machine: alokasi vCPU dan RAM hingga 4 TB, mode disk RAW vs QCOW2, alur pembuatan VM baru dari ISO, perbandingan 3 metode clone (instant full, link, full), import berkas OVA/OVF, ekspor VM aman, hingga instalasi driver paravirtualisasi Sangfor vmTools. Part 6 menuntaskan virtual network dan NFV: memvirtualisasikan jaringan fisik menjadi aNet, konfigurasi Physical Edge, port group VLAN, distributed virtual switch (DVS) dengan VXLAN, virtual router (vRouter), deployment NFV (vNGAF, vIAM, vADC), serta pemantauan trafik dengan Traffic Mirroring dan Network Insight.</p>
       </div>
       <div class="panel-side">
         <h4>Yang dibahas</h4>
@@ -177,6 +192,12 @@
           <li>Perbandingan Instant Full Clone, Link Clone, &amp; Full Clone</li>
           <li>Prosedur aman import &amp; export VM</li>
           <li>Instalasi Sangfor vmTools Windows &amp; Linux</li>
+          <li>Konsep virtual network &amp; pemetaan physical to aNet</li>
+          <li>Physical Edge &amp; port group VLAN trunk</li>
+          <li>Distributed virtual switch (DVS) &amp; virtual router (vRouter)</li>
+          <li>Deployment NFV: vNGAF, vIAM, vADC &amp; service chaining</li>
+          <li>Traffic Mirroring (source, destination, sampling rate)</li>
+          <li>Network Insight &amp; pemantauan flow trafik 30 hari</li>
         </ul>
       </div>
     </div>
